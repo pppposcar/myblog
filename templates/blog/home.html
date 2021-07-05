@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">タイトル</th>
+          <th scope="col">内容</th>
+          <th scope="col">投稿日</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for post in object_list %}
+        <tr>
+          <th scope="row"> {{ post.pk }}</th>
+          <td>{{ post.title }}</td>
+          <td>{{ post.content }}</td>
+          <td>{{ post.published_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+{% endblock %}
